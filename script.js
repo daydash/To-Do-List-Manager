@@ -18,16 +18,27 @@ const display = () => {
   lists.innerHTML = todosList;
 };
 
-if (localStorage.getItem("todo-list-ls") !== null) {
-  todoArray = JSON.parse(localStorage.getItem("todo-list-ls"));
+if (localStorage.getItem("todoLs") !== null) {
+  todoArray = JSON.parse(localStorage.getItem("todoLs"));
   display();
 }
 
 const saveInfo = (todoArray) => {
   let str = JSON.stringify(todoArray);
-  localStorage.setItem("todo-list-ls", str);
+  localStorage.setItem("todoLs", str);
   display();
   todoBox.value = "";
+};
+
+const isListUpdated = () => {
+  let updated = true;
+  list.forEach((todo, id) => {
+    if (document.getElementById(`edit-${id}`).classList.contains("fa-check")) {
+      updated = false;
+      console.log(id);
+    }
+  });
+  return updated;
 };
 
 const editTask = (id) => {
@@ -46,7 +57,9 @@ const editTask = (id) => {
       todo: todo,
     });
 
-    saveInfo(todoArray);
+    if (isListUpdated(id)) {
+      saveInfo(todoArray);
+    }
   }
 };
 

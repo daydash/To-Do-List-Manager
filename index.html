@@ -14,15 +14,21 @@
     <div class="wrapper">
       <div class="title">ToDo Manager</div>
       <div class="container">
-        <form id="addForm">
-          <input type="text" id="todoBox" />
-          <button type="submit" id="todoBoxBtn">
-            <i class="fa-solid fa-plus"></i>
-          </button>
-        </form>
-        <div class="searchContainer">
-          <input type="text" id="searchBox" />
-          <i class="fa-solid fa-magnifying-glass" id="searchBtn"></i>
+        <div class="head-container">
+          <form id="addForm">
+            <input
+              type="text"
+              id="todoBox"
+              placeholder="Type here to add a todo!"
+            />
+            <button type="submit" id="todoBoxBtn">
+              <i class="fa-solid fa-plus" id="todoBoxBtnIcon"></i>
+            </button>
+          </form>
+          <div class="searchContainer">
+            <input type="text" id="searchBox" placeholder="Search" />
+            <i class="fa-solid fa-magnifying-glass" id="searchBtn"></i>
+          </div>
         </div>
         <div id="lists">
           <!-- <div class="list">
@@ -33,7 +39,6 @@
         </div>
       </div>
     </div>
-
     <script src="./script.js"></script>
   </body>
 </html>
