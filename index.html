@@ -3,10 +3,42 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>To-Do List Manager</title>
-    <link rel="stylesheet" href="./styles.css" />
+    <title>ToDo Manager</title>
   </head>
+  <link rel="stylesheet" href="./styles.css" />
+  <script
+    src="https://kit.fontawesome.com/a230101078.js"
+    crossorigin="anonymous"
+  ></script>
   <body>
+    <div class="wrapper">
+      <div class="title">ToDo Manager</div>
+      <div class="container">
+        <div class="head-container">
+          <form id="addForm">
+            <input
+              type="text"
+              id="todoBox"
+              placeholder="Type here to add a todo!"
+            />
+            <button type="submit" id="todoBoxBtn">
+              <i class="fa-solid fa-plus" id="todoBoxBtnIcon"></i>
+            </button>
+          </form>
+          <div class="searchContainer">
+            <input type="text" id="searchBox" placeholder="Search" />
+            <i class="fa-solid fa-magnifying-glass" id="searchBtn"></i>
+          </div>
+        </div>
+        <div id="lists">
+          <!-- <div class="list">
+            <input type="text" id="searchBox" value="Yash" disabled />
+            <i class="fa-solid fa-pen-to-square" onclick="editTask()"></i>
+            <i class="fa-solid fa-trash" onclick="deleteTask()"></i>
+          </div> -->
+        </div>
+      </div>
+    </div>
     <script src="./script.js"></script>
   </body>
 </html>
